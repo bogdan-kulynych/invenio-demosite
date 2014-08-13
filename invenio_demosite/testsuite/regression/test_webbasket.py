@@ -21,6 +21,9 @@
 
 __revision__ = "$Id$"
 
+from nose.tools import nottest
+
+
 from invenio.testsuite import InvenioTestCase
 import mechanize
 import re
@@ -32,7 +35,9 @@ from invenio.testsuite import make_test_suite, run_test_suite, InvenioTestCase, 
 class WebBasketWebPagesAvailabilityTest(InvenioTestCase):
     """Check WebBasket web pages whether they are up or not."""
 
-    def test_your_baskets_pages_availability(self):
+
+    @nottest
+    def FIXME_test_your_baskets_pages_availability(self):
         """webbasket - availability of Your Baskets pages"""
 
         baseurl = cfg['CFG_SITE_URL'] + '/yourbaskets/'

@@ -20,6 +20,9 @@
 """WebJournal module web tests."""
 
 from invenio.config import CFG_SITE_SECURE_URL
+
+from nose.tools import nottest
+
 from invenio.testsuite import make_test_suite, \
                               run_test_suite, \
                               InvenioWebTestCase
@@ -28,7 +31,9 @@ from invenio.testsuite import make_test_suite, \
 class InvenioWebJournalWebTest(InvenioWebTestCase):
     """WebJournal web tests."""
 
-    def test_admin_restrictions(self):
+
+    @nottest
+    def FIXME_test_admin_restrictions(self):
         """webjournal - web test admin restrictions"""
 
         self.browser.get(CFG_SITE_SECURE_URL + '/admin/webjournal/webjournaladmin.py?ln=en')

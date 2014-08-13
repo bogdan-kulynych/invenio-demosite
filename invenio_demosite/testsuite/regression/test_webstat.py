@@ -21,6 +21,9 @@
 
 __revision__ = "$Id$"
 
+from nose.tools import nottest
+
+
 from invenio.testsuite import InvenioTestCase
 from invenio.testsuite import make_test_suite, run_test_suite, \
      test_web_page_content, merge_error_messages
@@ -30,7 +33,9 @@ from invenio.base.globals import cfg
 class WebStatWebPagesAvailabilityTest(InvenioTestCase):
     """Check WebStat web pages whether they are up or not."""
 
-    def test_stats_pages_availability(self):
+
+    @nottest
+    def FIXME_test_stats_pages_availability(self):
         """webstat - availability of /stats pages"""
 
         baseurl = cfg['CFG_SITE_URL'] + '/stats/'

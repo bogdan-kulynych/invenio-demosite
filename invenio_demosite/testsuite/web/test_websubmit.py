@@ -20,6 +20,9 @@
 """WebSubmit module web tests."""
 
 from invenio.config import CFG_SITE_SECURE_URL
+
+from nose.tools import nottest
+
 from invenio.testsuite import make_test_suite, \
                               run_test_suite, \
                               InvenioWebTestCase
@@ -28,7 +31,9 @@ from invenio.testsuite import make_test_suite, \
 class InvenioWebSubmitWebTest(InvenioWebTestCase):
     """WebSubmit web tests."""
 
-    def test_submit_article(self):
+
+    @nottest
+    def FIXME_test_submit_article(self):
         """websubmit - web test submit an article"""
 
         self.browser.get(CFG_SITE_SECURE_URL)
@@ -59,7 +64,9 @@ class InvenioWebSubmitWebTest(InvenioWebTestCase):
                                              'Your document has the following reference(s): <b>DEMO-ARTICLE-'])
         self.logout()
 
-    def test_submit_book(self):
+
+    @nottest
+    def FIXME_test_submit_book(self):
         """websubmit - web test submit a book"""
 
         self.browser.get(CFG_SITE_SECURE_URL)
@@ -87,7 +94,9 @@ class InvenioWebSubmitWebTest(InvenioWebTestCase):
                                              'An email has been sent to the referee.'])
         self.logout()
 
-    def test_submit_book_approval(self):
+
+    @nottest
+    def FIXME_test_submit_book_approval(self):
         """websubmit - web test submit a book approval"""
 
         import time
@@ -115,7 +124,9 @@ class InvenioWebSubmitWebTest(InvenioWebTestCase):
                                              'It is currently restricted for security reasons'])
         self.logout()
 
-    def test_submit_journal(self):
+
+    @nottest
+    def FIXME_test_submit_journal(self):
         """websubmit - web test submit a journal"""
 
         self.browser.get(CFG_SITE_SECURE_URL + "/submit?doctype=DEMOJRN")
@@ -150,7 +161,9 @@ class InvenioWebSubmitWebTest(InvenioWebTestCase):
                                              'Your document has the following reference(s): <b>BUL-ARTS-'])
         self.logout()
 
-    def test_submit_poetry(self):
+
+    @nottest
+    def FIXME_test_submit_poetry(self):
         """websubmit - web test submit a poem"""
 
         self.browser.get(CFG_SITE_SECURE_URL)
@@ -175,7 +188,9 @@ class InvenioWebSubmitWebTest(InvenioWebTestCase):
                                              'Your document has the following reference(s): <b>DEMO-POETRY-'])
         self.logout()
 
-    def test_submit_tar_gz(self):
+
+    @nottest
+    def FIXME_test_submit_tar_gz(self):
         """websubmit - web test submit an article with a tar.gz file """
 
         self.browser.get(CFG_SITE_SECURE_URL)
@@ -205,7 +220,9 @@ class InvenioWebSubmitWebTest(InvenioWebTestCase):
                                              'Your document has the following reference(s): <b>DEMO-ARTICLE-'])
         self.logout()
 
-    def test_submit_article_guest(self):
+
+    @nottest
+    def FIXME_test_submit_article_guest(self):
         """websubmit - web test submit an article as a guest"""
         self.browser.get(CFG_SITE_SECURE_URL)
         self.find_element_by_link_text_with_timeout("Submit")
@@ -229,7 +246,9 @@ class InvenioWebSubmitWebTest(InvenioWebTestCase):
         self.page_source_test(expected_text=['Submission Complete!', \
                                              'Your document has the following reference(s): <b>DEMO-ARTICLE-'])
 
-    def test_access_restricted_submission_as_guest(self):
+
+    @nottest
+    def FIXME_test_access_restricted_submission_as_guest(self):
         """websubmit - web test guest must login to access restricted submission"""
         self.browser.get(CFG_SITE_SECURE_URL + '/submit?ln=en&doctype=DEMOTHE')
         self.page_source_test(expected_text=['Password', 'Lost your password?'],

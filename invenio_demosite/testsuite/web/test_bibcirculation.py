@@ -20,6 +20,9 @@
 """Bibcirculation module web tests.
    These tests are designed to pass if the pre-existing data in the database
    tables is not modified. Additional data could have been added/modified/deleted.
+
+from nose.tools import nottest
+
    These are sample tests for a few control flows. More tests must be added to the
    relevant classes for exhaustive testing.
 
@@ -44,7 +47,9 @@ class BibcirculationLoanRequestReturnWebTest(InvenioWebTestCase):
     admin = "admin"
     pass_admin = ""
 
-    def test_loan_and_return_book(self):
+
+    @nottest
+    def FIXME_test_loan_and_return_book(self):
         print "Starting test_loan_and_return_book..."
         self.browser.get(CFG_SITE_SECURE_URL)
         self.login(username=self.admin, password=self.pass_admin)
@@ -134,17 +139,23 @@ class BibcirculationILLWebTest(InvenioWebTestCase):
     of the ILL(library, request date, cost...) and appearance in the appropriate
     ILL lists.
     """
-    def test_ill_book_request(self):
+
+    @nottest
+    def FIXME_test_ill_book_request(self):
         pass
 
-    def test_ill_article_request(self):
+
+    @nottest
+    def FIXME_test_ill_article_request(self):
         pass
 
 class BibcirculationBookProposalWebTest(InvenioWebTestCase):
     """
     Web tests for book proposal control flows.
     """
-    def test_propose_book_by_user(self):
+
+    @nottest
+    def FIXME_test_propose_book_by_user(self):
         pass
 
 class BibcirculationBookPurchaseWebTest(InvenioWebTestCase):
@@ -156,7 +167,9 @@ class BibcirculationBookPurchaseWebTest(InvenioWebTestCase):
     admin = "admin"
     pass_admin = ""
 
-    def test_purchase_book_request_with_recid(self):
+
+    @nottest
+    def FIXME_test_purchase_book_request_with_recid(self):
         print "Starting test_purchase_book_request_with_recid..."
         self.browser.get(CFG_SITE_SECURE_URL)
         self.find_element_by_link_text_with_timeout("Books")

@@ -21,6 +21,9 @@
 
 __revision__ = "$Id$"
 
+from nose.tools import nottest
+
+
 from cStringIO import StringIO
 import sys
 import datetime
@@ -41,7 +44,9 @@ get_creation_date = lazy_import('invenio.legacy.search_engine:get_creation_date'
 class WebAlertWebPagesAvailabilityTest(InvenioTestCase):
     """Check WebAlert web pages whether they are up or not."""
 
-    def test_your_alerts_pages_availability(self):
+
+    @nottest
+    def FIXME_test_your_alerts_pages_availability(self):
         """webalert - availability of Your Alerts pages"""
         from invenio.config import CFG_SITE_URL
 
@@ -61,7 +66,9 @@ class WebAlertWebPagesAvailabilityTest(InvenioTestCase):
 class WebAlertHTMLToTextTest(InvenioTestCase):
     """Check that HTML is properly converted to text."""
 
-    def test_your_alerts_pages_availability(self):
+
+    @nottest
+    def FIXME_test_your_alerts_pages_availability(self):
         """webalert - HTML to text conversion"""
         get_as_text = lazy_import('invenio.legacy.webalert.htmlparser:get_as_text')
 

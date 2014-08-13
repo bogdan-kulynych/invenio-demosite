@@ -21,6 +21,9 @@
 
 """WebSession Regression Test Suite."""
 
+from nose.tools import nottest
+
+
 __revision__ = \
     "$Id$"
 
@@ -58,7 +61,9 @@ class WebSessionYourSettingsTests(MailTestCase):
         run_sql('DELETE FROM user WHERE email="foo@cds.cern.ch"')
         run_sql('DELETE FROM user WHERE email="FOO@cds.cern.ch"')
 
-    def test_password_setting(self):
+
+    @nottest
+    def FIXME_test_password_setting(self):
         """webuser - check password settings"""
         browser = Browser()
         browser.open(cfg['CFG_SITE_SECURE_URL'] + "/youraccount/login")
@@ -135,7 +140,9 @@ class WebSessionYourSettingsTests(MailTestCase):
             self.fail("Expected to see %s, got %s." % \
                     (expected_response, change_password_body))
 
-    def test_email_caseless(self):
+
+    @nottest
+    def FIXME_test_email_caseless(self):
         """webuser - check email caseless"""
         browser = Browser()
         browser.open(cfg['CFG_SITE_SECURE_URL'] + "/youraccount/register")
@@ -189,7 +196,9 @@ class WebSessionYourSettingsTests(MailTestCase):
             self.fail("Expected to see %s, got %s." % \
                       (expected_response, login_response_body))
 
-    def test_select_records_per_group(self):
+
+    @nottest
+    def FIXME_test_select_records_per_group(self):
         """webuser - test of user preferences setting"""
 
         # logging in as admin

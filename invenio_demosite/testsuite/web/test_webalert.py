@@ -20,6 +20,9 @@
 """WebAlert module web tests."""
 
 from invenio.config import CFG_SITE_SECURE_URL
+
+from nose.tools import nottest
+
 from invenio.testsuite import make_test_suite, \
                               run_test_suite, \
                               InvenioWebTestCase
@@ -28,7 +31,9 @@ from invenio.testsuite import make_test_suite, \
 class InvenioWebAlertWebTest(InvenioWebTestCase):
     """WebAlert web tests."""
 
-    def test_add_alert(self):
+
+    @nottest
+    def FIXME_test_add_alert(self):
         """webalert - web test set a new alert"""
 
         self.browser.get(CFG_SITE_SECURE_URL)
@@ -51,7 +56,9 @@ class InvenioWebAlertWebTest(InvenioWebTestCase):
         self.page_source_test(expected_text='The alert <b>news</b> has been removed from your profile.')
         self.logout()
 
-    def test_alert_addbasket(self):
+
+    @nottest
+    def FIXME_test_alert_addbasket(self):
         """webalert - web test set an alert and store results in a basket"""
 
         self.browser.get(CFG_SITE_SECURE_URL)
@@ -96,7 +103,9 @@ class InvenioWebAlertWebTest(InvenioWebTestCase):
         self.browser.find_element_by_xpath("//input[@value='Yes']").click()
         self.logout()
 
-    def test_alert_yoursearches(self):
+
+    @nottest
+    def FIXME_test_alert_yoursearches(self):
         """webalert - web test presence of your searches in 'Alerts'"""
     
         self.browser.get(CFG_SITE_SECURE_URL)

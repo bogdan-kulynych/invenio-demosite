@@ -21,6 +21,9 @@
 
 __revision__ = "$Id$"
 
+from nose.tools import nottest
+
+
 from invenio.testsuite import InvenioTestCase
 
 from invenio.base.globals import cfg
@@ -31,7 +34,9 @@ from invenio.testsuite import make_test_suite, run_test_suite, \
 class BibEditWebPagesAvailabilityTest(InvenioTestCase):
     """Check BibEdit web pages whether they are up or not."""
 
-    def test_bibedit_admin_interface_availability(self):
+
+    @nottest
+    def FIXME_test_bibedit_admin_interface_availability(self):
         """bibedit - availability of BibEdit Admin interface pages"""
 
         baseurl = cfg['CFG_SITE_URL'] + '/record/1/'
@@ -52,7 +57,9 @@ class BibEditWebPagesAvailabilityTest(InvenioTestCase):
             self.fail(merge_error_messages(error_messages))
         return
 
-    def test_bibedit_admin_guide_availability(self):
+
+    @nottest
+    def FIXME_test_bibedit_admin_guide_availability(self):
         """bibedit - availability of BibEdit Admin guide pages"""
 
         url = cfg['CFG_SITE_URL'] + '/help/admin/bibedit-admin-guide'

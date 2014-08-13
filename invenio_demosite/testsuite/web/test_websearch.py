@@ -20,13 +20,18 @@
 """WebSearch module web tests."""
 
 from invenio.config import CFG_SITE_URL
+
+from nose.tools import nottest
+
 from invenio.testsuite import InvenioWebTestCase, make_test_suite, run_test_suite
 
 
 class InvenioWebSearchWebTests(InvenioWebTestCase):
     """WebSearch web tests."""
 
-    def test_search_ellis(self):
+
+    @nottest
+    def FIXME_test_search_ellis(self):
         """websearch - web test search for ellis"""
         self.browser.get(CFG_SITE_URL)
         p = self.browser.find_element_by_name("p")

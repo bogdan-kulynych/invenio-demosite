@@ -21,6 +21,9 @@
 
 __revision__ = "$Id$"
 
+from nose.tools import nottest
+
+
 from invenio.testsuite import InvenioTestCase
 
 from invenio.base.globals import cfg
@@ -31,7 +34,9 @@ from invenio.testsuite import make_test_suite, run_test_suite, \
 class OAIRepositoryAdminWebPagesAvailabilityTest(InvenioTestCase):
     """Check OAI Repository Admin web pages whether they are up or not."""
 
-    def test_oairepositoryadmin_interface_pages_availability(self):
+
+    @nottest
+    def FIXME_test_oairepositoryadmin_interface_pages_availability(self):
         """oairepositoryadmin - availability of OAI Repository Admin interface pages"""
 
         baseurl = cfg['CFG_SITE_URL'] + '/admin/oairepository/oairepositoryadmin.py/'
@@ -52,7 +57,9 @@ class OAIRepositoryAdminWebPagesAvailabilityTest(InvenioTestCase):
             self.fail(merge_error_messages(error_messages))
         return
 
-    def test_oairepositoryadmin_edit_set(self):
+
+    @nottest
+    def FIXME_test_oairepositoryadmin_edit_set(self):
         """oairepositoryadmin - edit set page"""
         test_edit_url = cfg['CFG_SITE_URL'] + \
                "/admin/oairepository/oairepositoryadmin.py/editset?oai_set_id=2"
@@ -62,7 +69,9 @@ class OAIRepositoryAdminWebPagesAvailabilityTest(InvenioTestCase):
             self.fail(merge_error_messages(error_messages))
         return
 
-    def test_oairepositoryadmin_delete_set(self):
+
+    @nottest
+    def FIXME_test_oairepositoryadmin_delete_set(self):
         """oairepositoryadmin - delete set page"""
         test_edit_url = cfg['CFG_SITE_URL'] + \
                "/admin/oairepository/oairepositoryadmin.py/delset?oai_set_id=2"

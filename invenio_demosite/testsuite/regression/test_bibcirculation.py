@@ -21,6 +21,9 @@
 
 __revision__ = "$Id$"
 
+from nose.tools import nottest
+
+
 from invenio.base.globals import cfg
 from invenio.testsuite import make_test_suite, run_test_suite, \
                               test_web_page_content, merge_error_messages, \
@@ -30,7 +33,9 @@ from invenio.testsuite import make_test_suite, run_test_suite, \
 class BibCirculationUsersWebPagesAvailabilityTest(InvenioTestCase):
     """Check BibCirculation web pages whether they are up or not."""
 
-    def test_your_loans_page_availability(self):
+
+    @nottest
+    def FIXME_test_your_loans_page_availability(self):
         """bibcirculation - availability of your loans page"""
 
         baseurl = cfg['CFG_SITE_URL'] + '/yourloans/'
@@ -48,7 +53,9 @@ class BibCirculationUsersWebPagesAvailabilityTest(InvenioTestCase):
 class BibCirculationAdminsWebPagesAvailabilityTest(InvenioTestCase):
     """Check BibCirculation web pages whether they are up or not for Admins."""
 
-    def test_admin_pages_availability(self):
+
+    @nottest
+    def FIXME_test_admin_pages_availability(self):
         """bibcirculation - availability of main admin page"""
 
         baseurl = cfg['CFG_SITE_URL'] + '/admin2/bibcirculation'
@@ -58,7 +65,9 @@ class BibCirculationAdminsWebPagesAvailabilityTest(InvenioTestCase):
 
         return
 
-    def test_borrower_search_availability(self):
+
+    @nottest
+    def FIXME_test_borrower_search_availability(self):
         """bibcirculation - availability of borrower search"""
 
         baseurl = cfg['CFG_SITE_SECURE_URL'] + '/admin2/bibcirculation/' \
@@ -69,7 +78,9 @@ class BibCirculationAdminsWebPagesAvailabilityTest(InvenioTestCase):
 
         return
 
-    def test_item_search_availability(self):
+
+    @nottest
+    def FIXME_test_item_search_availability(self):
         """bibcirculation - availability of item search"""
 
         baseurl = cfg['CFG_SITE_SECURE_URL'] + '/admin2/bibcirculation/' \

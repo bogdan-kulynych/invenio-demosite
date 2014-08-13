@@ -20,6 +20,9 @@
 """WebMessage module web tests."""
 
 from invenio.config import CFG_SITE_SECURE_URL
+
+from nose.tools import nottest
+
 from invenio.testsuite import make_test_suite, \
                               run_test_suite, \
                               InvenioWebTestCase
@@ -48,7 +51,9 @@ class InvenioWebMessageWebTest(InvenioWebTestCase):
         if body:
             self.fill_textbox(textbox_name="msg_body", text=body)
 
-    def test_send_message(self):
+
+    @nottest
+    def FIXME_test_send_message(self):
         """webmessage - web test send a message"""
 
         self.browser.get(CFG_SITE_SECURE_URL)
@@ -86,7 +91,9 @@ class InvenioWebMessageWebTest(InvenioWebTestCase):
         self.browser.find_element_by_name("delete").click()
         self.logout()
 
-    def test_delete_all_messages(self):
+
+    @nottest
+    def FIXME_test_delete_all_messages(self):
         """webmessage - web test delete all messages"""
 
         self.browser.get(CFG_SITE_SECURE_URL)
@@ -122,7 +129,9 @@ class InvenioWebMessageWebTest(InvenioWebTestCase):
         self.page_source_test(expected_text='No messages')
         self.logout()
 
-    def test_reply_message(self):
+
+    @nottest
+    def FIXME_test_reply_message(self):
         """webmessage - web test reply a message"""
 
         self.browser.get(CFG_SITE_SECURE_URL)
@@ -180,7 +189,9 @@ class InvenioWebMessageWebTest(InvenioWebTestCase):
         self.browser.find_element_by_name("delete").click()
         self.logout()
 
-    def test_send_message_later(self):
+
+    @nottest
+    def FIXME_test_send_message_later(self):
         """webmessage - web test send a message later"""
 
         self.browser.get(CFG_SITE_SECURE_URL)

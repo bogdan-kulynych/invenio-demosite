@@ -20,6 +20,9 @@
 """OaiHarvest module web tests."""
 
 from invenio.config import CFG_SITE_SECURE_URL
+
+from nose.tools import nottest
+
 from invenio.testsuite import make_test_suite, \
                               run_test_suite, \
                               InvenioWebTestCase
@@ -28,7 +31,9 @@ from invenio.testsuite import make_test_suite, \
 class InvenioOaiHarvestWebTest(InvenioWebTestCase):
     """OaiHarvest web tests."""
 
-    def test_insert_oai_source(self):
+
+    @nottest
+    def FIXME_test_insert_oai_source(self):
         """oaiharvest - web test insert oai source"""
 
         self.browser.get(CFG_SITE_SECURE_URL)

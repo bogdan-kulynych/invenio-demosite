@@ -20,6 +20,9 @@
 """BibEdit module web tests."""
 
 from invenio.config import CFG_SITE_SECURE_URL
+
+from nose.tools import nottest
+
 from invenio.testsuite import make_test_suite, \
                               run_test_suite, \
                               InvenioWebTestCase
@@ -32,7 +35,9 @@ except ImportError:
 class InvenioBibEditWebTest(InvenioWebTestCase):
     """BibEdit web tests."""
 
-    def test_bibedit_access_curator_all(self):
+
+    @nottest
+    def FIXME_test_bibedit_access_curator_all(self):
         """bibedit - web test access curator all"""
 
         self.browser.get(CFG_SITE_SECURE_URL)
@@ -62,7 +67,9 @@ class InvenioBibEditWebTest(InvenioWebTestCase):
         self.find_element_by_id_with_timeout("cellStatus", text="Ready")
         self.logout()
 
-    def test_bibedit_access_curator_coll(self):
+
+    @nottest
+    def FIXME_test_bibedit_access_curator_coll(self):
         """bibedit - web test access curator coll"""
 
         self.browser.get(CFG_SITE_SECURE_URL)
@@ -87,7 +94,9 @@ class InvenioBibEditWebTest(InvenioWebTestCase):
         self.element_value_test(element_id="bibEditMessage", expected_element_value="Could not access record. Permission denied.", in_form=False)
         self.logout()
 
-    def test_bibedit_access_curator_none(self):
+
+    @nottest
+    def FIXME_test_bibedit_access_curator_none(self):
         """bibedit - web test access curator none"""
 
         self.browser.get(CFG_SITE_SECURE_URL)
@@ -109,7 +118,9 @@ class InvenioBibEditWebTest(InvenioWebTestCase):
         self.element_value_test(element_id="bibEditMessage", expected_element_value="Could not access record. Permission denied.", in_form=False)
         self.logout()
 
-    def test_bibedit_basic_record_locking(self):
+
+    @nottest
+    def FIXME_test_bibedit_basic_record_locking(self):
         """bibedit - web test basic record locking"""
 
         self.browser.get(CFG_SITE_SECURE_URL)

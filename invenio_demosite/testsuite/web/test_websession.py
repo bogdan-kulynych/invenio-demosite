@@ -20,6 +20,9 @@
 """WebMessage module web tests."""
 
 from invenio.config import CFG_SITE_SECURE_URL
+
+from nose.tools import nottest
+
 from invenio.testsuite import make_test_suite, \
                               run_test_suite, \
                               InvenioWebTestCase
@@ -41,7 +44,9 @@ class InvenioWebSessionWebTest(InvenioWebTestCase):
         self.find_element_by_xpath_with_timeout("//input[@value='Yes']")
         self.browser.find_element_by_xpath("//input[@value='Yes']").click()
 
-    def test_create_group(self):
+
+    @nottest
+    def FIXME_test_create_group(self):
         """websession - web test create a group"""
 
         self.browser.get(CFG_SITE_SECURE_URL)
@@ -70,7 +75,9 @@ class InvenioWebSessionWebTest(InvenioWebTestCase):
         self._delete_messages()
         self.logout()
 
-    def test_message_group(self):
+
+    @nottest
+    def FIXME_test_message_group(self):
         """websession - web test send a message to any group"""
 
         self.browser.get(CFG_SITE_SECURE_URL)
@@ -106,7 +113,9 @@ class InvenioWebSessionWebTest(InvenioWebTestCase):
         self.browser.find_element_by_name("delete").click()
         self.logout()
 
-    def test_create_open_group(self):
+
+    @nottest
+    def FIXME_test_create_open_group(self):
         """websession - web test create an open group and join it"""
 
         self.browser.get(CFG_SITE_SECURE_URL)
@@ -177,7 +186,9 @@ class InvenioWebSessionWebTest(InvenioWebTestCase):
         self._delete_messages()
         self.logout()
 
-    def test_set_group(self):
+
+    @nottest
+    def FIXME_test_set_group(self):
         """websession - web test set group"""
 
         self.browser.get(CFG_SITE_SECURE_URL)
